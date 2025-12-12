@@ -22,16 +22,16 @@ public class UserEndpoints {
 
     public static Response readUser(String userName) {
         return given()
-                .pathParam("userName", userName)
+                .pathParam("username", userName)
                 .when()
-                .post(Routes.get_url);
+                .get(Routes.get_url);
     }
 
     public static Response updateUser(String userName, User payload) {
         return given()
                 .contentType(ContentType.JSON)
                 .accept(ContentType.JSON)
-                .pathParam("userName", userName)
+                .pathParam("username", userName)
                 .body(payload)
 
                 .when()
@@ -40,7 +40,7 @@ public class UserEndpoints {
 
     public static Response deleteUser(String userName) {
         return given()
-                .pathParam("userName", userName)
+                .pathParam("username", userName)
                 .when()
                 .delete(Routes.delete_url);
     }
